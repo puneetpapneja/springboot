@@ -13,7 +13,11 @@ public class TopicService {
         new Topic("3","topic 3","description 3")
     );
 
-    public List<Topic> getTopics(){
+    public List<Topic> getAll(){
         return topics;
+    }
+
+    public Topic getById(String id){
+        return topics.stream().filter(t -> t.getId().equals(id)).findFirst().get();
     }
 }
