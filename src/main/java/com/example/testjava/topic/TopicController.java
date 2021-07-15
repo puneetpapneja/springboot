@@ -25,7 +25,7 @@ public class TopicController {
     }
 
     @RequestMapping("/topicByName/{name}")
-    public Topic getById(@PathVariable String name){
+    public List<Topic> getByNames(@PathVariable String name){
         return topicService.getByName(name);
     }
 

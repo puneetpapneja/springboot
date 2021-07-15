@@ -32,8 +32,9 @@ public class TopicService {
         topicRepo.save(topic);
     }
     
-    public Topic getByName(String name){
-        return topicRepo.findByName(name);
+    public List<Topic> getByName(String name){    
+        
+        return  topicRepo.findAllByName(name);      
     }
 
     public void update(Topic topic){
