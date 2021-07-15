@@ -1,7 +1,15 @@
 package com.example.testjava.topic;
 
-public class Topic {
-    private String id;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+
+@Entity
+public class Topic {  
+    @Id 
+    @Column(name = "id", unique = true, nullable = false) 
+    private Integer id;
     private String name;
     private String description;
 
@@ -9,18 +17,18 @@ public class Topic {
 
     }
 
-    public Topic(String id, String name, String description){
+    public Topic(Integer id, String name, String description){
         super();
         this.id = id;
         this.name = name;
         this.description = description;
     }
 
-    public String getId(){
+    public Integer getId(){
         return id;
     }
 
-    public void setId(String id){
+    public void setId(int id){
         this.id = id;
     }
 
