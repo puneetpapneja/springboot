@@ -11,7 +11,8 @@ import org.springframework.stereotype.Service;
 public class TopicService {
 
     @Autowired
-    private TopicRepo topicRepo;
+    //private TopicRepo topicRepo;
+    private TopicRepoWithCrud topicRepo;
     private List<Topic> topics = new ArrayList<>(Arrays.asList(
         new Topic(1,"topic 1","description 1"),
         new Topic(2,"topic 2","description 2"),
@@ -19,7 +20,9 @@ public class TopicService {
     ));
 
     public List<Topic> getAll(){
-        return topicRepo.findAll();
+        List<Topic> topics = new ArrayList<>();
+        topicRepo.findAll().forEach(topics::add);
+        return topics;
     }
 
     public Topic getById(Integer id){
