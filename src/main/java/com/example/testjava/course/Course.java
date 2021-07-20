@@ -18,6 +18,14 @@ public class Course {
 
     private String courseName;
 
+    public Course() {
+    }
+
+    public Course(Integer id, String courseName) {
+        this.id = id;
+        this.courseName = courseName;
+    }
+
     public String getCourseName() {
         return this.courseName;
     }

@@ -43,4 +43,9 @@ public class TopicController {
     public void delete(@PathVariable Integer id){
         topicService.delete(id);
     }
+
+    @RequestMapping("/course/{id}/topics")
+    public List<Topic> getAllByCourseId(@PathVariable Integer id){
+        return topicService.getAllByCourseId(id);
+    }
 }
