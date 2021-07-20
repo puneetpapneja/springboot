@@ -16,10 +16,10 @@ public class Lession {
 
     private String name;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private Course course;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private Topic topic;
 
     
@@ -27,11 +27,9 @@ public class Lession {
     public Lession() {
     }
 
-    public Lession(Integer id, String name, Integer courseId, Integer topicId) {
+    public Lession(Integer id, String name) {
         this.id = id;
-        this.name = name;
-        this.course = new Course(courseId,"");
-        this.topic = new Topic(topicId,"","",courseId);
+        this.name = name;        
     }
 
     public Integer getId() {
@@ -49,4 +47,22 @@ public class Lession {
     public void setName(String name) {
         this.name = name;
     }
+
+
+    public Course getCourse() {
+        return this.course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    public Topic getTopic() {
+        return this.topic;
+    }
+
+    public void setTopic(Topic topic) {
+        this.topic = topic;
+    }
+
 }
