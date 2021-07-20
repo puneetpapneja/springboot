@@ -32,6 +32,11 @@ public class TopicService {
         return topicRepo.findById(id).get();
     }
 
+    public Topic getByIdAndCourseId(Integer id,Integer courseId){
+        //return topics.stream().filter(t -> t.getId().equals(id)).findFirst().get();
+        return topicRepo.findByIdAndCourseId(id,courseId);
+    }
+
     public void add(Topic topic){
         //topics.add(topic);
         topicRepo.save(topic);
